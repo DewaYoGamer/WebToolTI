@@ -25,7 +25,17 @@
 
 <body id="page-top">
 
-    <?php include("php/connect.php"); ?>
+    <?php include("php/connect.php");
+    // Start the session
+    session_start();
+
+    // Check if the user is logged in
+    if (!isset($_SESSION['username'])) {
+    // Redirect the user to the login page
+    header("Location: login.php");
+    exit;
+    }
+    ?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -108,7 +118,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -232,15 +242,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Apakah Anda yakin untuk Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">x</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Tekan "Logout" jika Anda yakin untuk keluar.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="php/logout.php">Logout</a>
                 </div>
             </div>
         </div>

@@ -23,6 +23,38 @@
 
 </head>
 
+<?php
+// Start the session
+session_start();
+
+// Include your database connection file
+include 'php/connect.php';
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and validate the input data
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    // Query the database
+    $result = mysqli_query($conn, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
+
+    // Check if the user exists
+    if (mysqli_num_rows($result) == 1) {
+        // Store the user data in the session
+        $_SESSION['username'] = $username;
+
+        // Redirect the user to the admin page
+        header("Location: index.php");
+    } else {
+        // Show an error message
+        echo "<script>alert('Username atau Password Salah!'); window.location.href='login.php';</script>";
+    }
+}
+?>
+
+<!-- Your HTML form goes here -->
+
 <body class="bg-gradient-primary">
 
     <div class="container col-lg-4 py-5">
@@ -43,19 +75,19 @@
                                         <h1 class="h2 text-gray-900 mb-2">Data Mahasiswa TI UNUD</h1>
                                         <h2 class="h5 text-gray-800 mb-4 text-md-center">Silahkan Login</h2>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="POST" action="login.php">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Username">
+                                                placeholder="Username" name="username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                     </form>
                                 </div>
                             </div>
