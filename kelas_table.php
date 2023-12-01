@@ -155,12 +155,13 @@
                                             <th class="text-center">ID</th>
                                             <th class="text-center">Kelas</th>
                                             <th class="text-center">Dosen</th>
+                                            <th class="text-center">Jumlah Mahasiswa</th>
                                             <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $tampil = mysqli_query($conn,"SELECT * FROM tbKelas");
+                                        $tampil = mysqli_query($conn, "SELECT tbkelas.*, COUNT(tbmahasiswa.nim) AS jumlahMahasiswa FROM tbkelas LEFT JOIN tbmahasiswa ON tbkelas.idKelas = tbmahasiswa.idKelas GROUP BY tbkelas.idKelas");
 
                                         // Check if the query was successful
                                         if (!$tampil) {
@@ -172,6 +173,7 @@
                                             <td><?php echo $data['idKelas']; ?></td>
                                             <td><?php echo $data['namaKelas']; ?></td>
                                             <td><?php echo $data['namaDosen']; ?></td>
+                                            <td class="text-center"><?php echo $data['jumlahMahasiswa']; ?></td>
                                             <td>
                                                 <a href="php/delete_kelas.php?id=<?php echo $data['idKelas']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus?');">Delete</a>
                                             </td>

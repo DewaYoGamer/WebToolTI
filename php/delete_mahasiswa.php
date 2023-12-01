@@ -3,7 +3,7 @@ include 'connect.php';
 
 $nim = $_GET['id'];
 
-$delete = mysqli_query($conn, "DELETE FROM tbMahasiswa WHERE nim='$nim'");
+$delete = mysqli_query($conn, "DELETE FROM tbmahasiswa WHERE nim='$nim'");
 
 if (!$delete) {
     echo "Error: " . mysqli_error($conn);

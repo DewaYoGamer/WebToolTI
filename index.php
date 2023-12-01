@@ -39,14 +39,14 @@
     }
 
     // Get the total number of mahasiswa
-    $result = mysqli_query($conn, "SELECT COUNT(*) AS totalMahasiswa FROM tbMahasiswa");
+    $result = mysqli_query($conn, "SELECT COUNT(*) AS totalmahasiswa FROM tbmahasiswa");
     $data = mysqli_fetch_assoc($result);
-    $totalMahasiswa = $data['totalMahasiswa'];
+    $totalmahasiswa = $data['totalmahasiswa'];
 
     // Get the total number of kelas
-    $result = mysqli_query($conn, "SELECT COUNT(*) AS totalKelas FROM tbKelas");
+    $result = mysqli_query($conn, "SELECT COUNT(*) AS totalkelas FROM tbkelas");
     $data = mysqli_fetch_assoc($result);
-    $totalKelas = $data['totalKelas'];
+    $totalkelas = $data['totalkelas'];
     ?>
 
     <!-- Page Wrapper -->
@@ -167,7 +167,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Total Mahasiswa</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalMahasiswa; ?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalmahasiswa; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -185,7 +185,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Total Kelas</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalKelas; ?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $totalkelas; ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-suitcase fa-2x text-gray-300"></i>

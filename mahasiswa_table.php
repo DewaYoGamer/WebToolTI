@@ -161,7 +161,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $tampil = mysqli_query($conn, "SELECT tbMahasiswa.*, tbKelas.namaKelas FROM tbMahasiswa JOIN tbKelas ON tbMahasiswa.idKelas = tbKelas.idKelas");
+                                        $tampil = mysqli_query($conn, "SELECT tbmahasiswa.*, tbkelas.namakelas FROM tbmahasiswa JOIN tbkelas ON tbmahasiswa.idkelas = tbkelas.idkelas");
 
                                         // Check if the query was successful
                                         if (!$tampil) {
@@ -171,9 +171,9 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $data['nim']; ?></td>
-                                            <td><?php echo $data['namaMahasiswa']; ?></td>
+                                            <td><?php echo $data['namamahasiswa']; ?></td>
                                             <td><?php echo $data['telp']; ?></td>
-                                            <td><?php echo $data['namaKelas']; ?></td>
+                                            <td><?php echo $data['namakelas']; ?></td>
                                             <td>
                                                 <a href="php/delete_mahasiswa.php?id=<?php echo $data['nim']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus?');">Delete</a>
                                             </td>
