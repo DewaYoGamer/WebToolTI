@@ -2,7 +2,7 @@ Options -Indexes
 RewriteEngine On
 
 # Redirect requests to the root directory to index.php
-RewriteRule ^$ /WebToolTI/index.html [L]
+RewriteRule ^$ /WebToolTI/index.php [L]
 
 # Redirect requests to dashboard.php if it's a directory request
 RewriteCond %{REQUEST_FILENAME} -d

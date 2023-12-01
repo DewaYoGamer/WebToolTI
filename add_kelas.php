@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Data Mahasiswa TI - Blank</title>
+    <title>Admin Data Mahasiswa TI - Tambah Mahasiswa</title>
 
     <link rel="icon" type="image/x-icon" href="img/hmti-colored.ico">
     <!-- Custom fonts for this template-->
@@ -25,6 +25,8 @@
 
 <body id="page-top">
 
+    <?php include("php/connect.php"); ?>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -32,7 +34,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../WebToolTI">
                 <div class="sidebar-brand-icon" style="width: 45px; height: 45px;">
                     <img src="img/hmti-colored.png" alt="Brand Icon" class="img-fluid" style="margin-top: 3px;">
                 </div>
@@ -43,116 +45,38 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item">
+                <a class="nav-link" href="../WebToolTI">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Nav Item - Mahasiswa Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" data-toggle="collapse" data-target="#collapseMahasiswa"
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseMahasiswa"
                     aria-expanded="true" aria-controls="collapseMahasiswa">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Mahasiswa</span>
                 </a>
-                <div id="collapseMahasiswa" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseMahasiswa" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active">Tambah Mahasiswa</a>
-                        <a class="collapse-item" href="delete-mahasiswa.html">Hapus Mahasiswa</a>
+                        <a class="collapse-item" href="add_mahasiswa.php">Tambah Mahasiswa</a>
+                        <a class="collapse-item" href="mahasiswa_table.php">Daftar Mahasiswa</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Kelas Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKelas"
                     aria-expanded="true" aria-controls="collapseKelas">
                     <i class="fas fa-fw fa-suitcase"></i>
                     <span>Kelas</span>
                 </a>
-                <div id="collapseKelas" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseKelas" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="add-kelas.html">Tambah Kelas</a>
-                        <a class="collapse-item" href="delete-kelas.html">Hapus Kelas</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tabel Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTabel"
-                    aria-expanded="true" aria-controls="collapseTabel">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tabel</span>
-                </a>
-                <div id="collapseTabel" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="mahasiswa_table.html">Mahasiswa</a>
-                        <a class="collapse-item" href="kelas_table.html">Kelas</a>
+                        <a class="collapse-item active">Tambah Kelas</a>
+                        <a class="collapse-item" href="kelas_table.php">Daftar Kelas</a>
                     </div>
                 </div>
             </li>
@@ -177,11 +101,6 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -196,19 +115,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -224,7 +130,62 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Tambah Kelas</h1>
+
+                    <div class="alert alert-light" role="alert">
+                        <div class="card">
+                            <form method="POST" enctype="multipart/form-data">
+                                <div class="card-body col-md-12">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="idKelas">ID Kelas<span style="color:red;">*</span></label>
+                                            <input class="form-control" name="idKelas" id="idKelas" type="text" placeholder="Masukan ID Kelas" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxLength="5" />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="nama_kelas">Nama Kelas<span style="color:red;">*</span></label>
+                                            <input class="form-control" name="nama_kelas" id="nama_kelas" type="text" placeholder="Masukan Nama Mahasiswa" maxLength="35" />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="nama_dosen">Nama Dosen<span style="color:red;">*</span></label>
+                                            <input class="form-control" name="nama_dosen" id="nama_dosen" type="text" placeholder="Masukan Nama Dosen" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxLength="13" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" name="simpan" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
+                                    <button type="button" onclick="window.history.back()" class="btn btn-danger"><i class="fa fa-arrow-left"></i> Batal</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                        <?php
+                        if(isset($_POST['simpan'])){
+                        $idKelas = $_POST['idKelas'];
+                        $nama_kelas = $_POST['nama_kelas'];
+                        $nama_dosen = $_POST['nama_dosen'];
+
+                        
+                        if ($idKelas == '' || $nama_kelas == '' || $nama_dosen == '' || strlen($nama_kelas) < 3 || strlen($nama_dosen) < 3 || strlen($idKelas) != 5) {
+                            echo "<script>alert('Masukan tidak valid, silahkan coba kembali');</script>";
+                        } else {
+                            // Check if idKelas already exists
+                            $check = mysqli_query($conn, "SELECT * FROM tbKelas WHERE idKelas='$idKelas'");
+                            if (mysqli_num_rows($check) > 0) {
+                                echo "<script>alert('idKelas sudah ada, silahkan coba lagi');</script>";
+                            } else {
+                                $simpan = mysqli_query($conn, 'INSERT INTO tbKelas(idKelas,namaKelas,namaDosen) VALUES ("'.$idKelas.'", "'.$nama_kelas.'", "'.$nama_dosen.'")' );
+                                echo '
+                                <script>
+                                alert("Kelas berhasil ditambahkan!");
+                                window.location="kelas_table.php";
+                                </script>
+                                ';
+                            }
+                        }   
+                        }
+                        ?>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -236,7 +197,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Dewa Putu Ananta Prayoga 2023</span>
                     </div>
                 </div>
             </footer>
