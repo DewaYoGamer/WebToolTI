@@ -11,6 +11,7 @@
 
     <title>Admin Data Mahasiswa TI - Tambah Mahasiswa</title>
 
+    <link rel="icon" type="image/x-icon" href="img/hmti-colored.ico">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -50,7 +51,7 @@
 
             <!-- Nav Item - Mahasiswa Menu -->
             <li class="nav-item active">
-                <a class="nav-link" data-toggle="collapse" data-target="#collapseMahasiswa"
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseMahasiswa"
                     aria-expanded="true" aria-controls="collapseMahasiswa">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Mahasiswa</span>
@@ -72,8 +73,8 @@
                 </a>
                 <div id="collapseKelas" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="add-mahasiswa.html">Tambah Kelas</a>
-                        <a class="collapse-item" href="delete-mahasiswa.html">Hapus Kelas</a>
+                        <a class="collapse-item" href="add-kelas.html">Tambah Kelas</a>
+                        <a class="collapse-item" href="delete-kelas.html">Hapus Kelas</a>
                     </div>
                 </div>
             </li>
@@ -141,11 +142,19 @@
                     <span>Charts</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Tabel Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTabel"
+                    aria-expanded="true" aria-controls="collapseTabel">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Tabel</span>
+                </a>
+                <div id="collapseTabel" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="mahasiswa_table.html">Mahasiswa</a>
+                        <a class="collapse-item" href="kelas_table.html">Kelas</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Divider -->
