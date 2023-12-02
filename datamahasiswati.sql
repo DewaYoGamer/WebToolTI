@@ -22,4 +22,4 @@ PRIMARY KEY (nim),
 FOREIGN KEY (idKelas) REFERENCES tbkelas (idKelas)
 );
 
-INSERT INTO admin(username, pass) VALUE('yoga', 'yoga');
+INSERT INTO admin(username, pass) VALUE('yoga', 'yoga123');
