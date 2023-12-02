@@ -171,7 +171,7 @@
                                                 $tampil = mysqli_query($conn, "SELECT * FROM tbkelas");
                                                 while ($data = mysqli_fetch_array($tampil)) {
                                                     ?>
-                                                <option value="<?php echo $data['idkelas'] ?>"> <?php echo $data['namakelas'] ?></option>
+                                                <option value="<?php echo $data['idKelas'] ?>"> <?php echo $data['namaKelas'] ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
