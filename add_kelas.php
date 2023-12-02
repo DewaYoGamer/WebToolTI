@@ -181,11 +181,11 @@
                             echo "<script>alert('Masukan tidak valid, silahkan coba kembali');</script>";
                         } else {
                             // Check if idKelas already exists
-                            $check = mysqli_query($conn, "SELECT * FROM tbKelas WHERE idKelas='$idKelas'");
+                            $check = mysqli_query($conn, "SELECT * FROM tbkelas WHERE idKelas='$idKelas'");
                             if (mysqli_num_rows($check) > 0) {
                                 echo "<script>alert('idKelas sudah ada, silahkan coba lagi');</script>";
                             } else {
-                                $simpan = mysqli_query($conn, 'INSERT INTO tbKelas(idKelas,namaKelas,namaDosen) VALUES ("'.$idKelas.'", "'.$nama_kelas.'", "'.$nama_dosen.'")' );
+                                $simpan = mysqli_query($conn, 'INSERT INTO tbkelas(idKelas,namaKelas,namaDosen) VALUES ("'.$idKelas.'", "'.$nama_kelas.'", "'.$nama_dosen.'")' );
                                 echo '
                                 <script>
                                 alert("Kelas berhasil ditambahkan!");

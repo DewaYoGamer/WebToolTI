@@ -160,7 +160,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $tampil = mysqli_query($conn,"SELECT * FROM tbKelas");
+                                        $tampil = mysqli_query($conn,"SELECT * FROM tbkelas");
 
                                         // Check if the query was successful
                                         if (!$tampil) {

@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Query the database
-    $result = mysqli_query($conn, "SELECT * FROM admin WHERE username='$username' AND password='$password'");
+    $result = mysqli_query($conn, "SELECT * FROM admin WHERE username='$username' AND pass='$password'");
 
     // Check if the user exists
     if (mysqli_num_rows($result) == 1) {

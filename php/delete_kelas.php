@@ -3,7 +3,7 @@ include 'connect.php';
 
 $idKelas = $_GET['id'];
 
-$delete = mysqli_query($conn, "DELETE FROM tbKelas WHERE idKelas='$idKelas'");
+$delete = mysqli_query($conn, "DELETE FROM tbkelas WHERE idkelas='$idKelas'");
 
 if (!$delete) {
     echo "Error: " . mysqli_error($conn);

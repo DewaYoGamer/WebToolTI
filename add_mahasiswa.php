@@ -165,8 +165,9 @@
                                             <label for="exampleFormControlSelect1">Kelas<span style="color:red;">*</span></label>
                                             <select class="selectpicker form-control" id="exampleFormControlSelect1" name="kelas"
                                                 data-live-search="true" title="Select Petugas" data-hide-disabled="true">
+                                                <option selected disabled>-- Tambah Kelas --</option>
                                                 <?php
-                                                $tampil = mysqli_query($conn, "SELECT * FROM tbKelas");
+                                                $tampil = mysqli_query($conn, "SELECT * FROM tbkelas");
                                                 while ($data = mysqli_fetch_array($tampil)) {
                                                     ?>
                                                 <option value="<?php echo $data['idKelas'] ?>"> <?php echo $data['namaKelas'] ?></option>
@@ -190,15 +191,15 @@
                         $kelas = $_POST['kelas'];
 
                         
-                        if ($nim == '' || $nama_mahasiswa == '' || $telp == '' || strlen($telp) < 8 || strlen($nama_mahasiswa) < 3 || strlen($nim) != 10) {
+                        if ($nim == '' || $nama_mahasiswa == '' || $telp == '' || strlen($telp) < 8 || strlen($nama_mahasiswa) < 3 || strlen($nim) != 10 || $kelas != '-- Tambah Kelas --') {
                             echo "<script>alert('Masukan tidak valid, silahkan coba kembali');</script>";
                         } else {
                             // Check if nim already exists
-                            $check = mysqli_query($conn, "SELECT * FROM tbMahasiswa WHERE nim='$nim'");
+                            $check = mysqli_query($conn, "SELECT * FROM tbmahasiswa WHERE nim='$nim'");
                             if (mysqli_num_rows($check) > 0) {
                                 echo "<script>alert('NIM sudah ada, silahkan coba lagi');</script>";
                             } else {
-                                $simpan = mysqli_query($conn, 'INSERT INTO tbMahasiswa(nim,namaMahasiswa,telp,idKelas) VALUES ("'.$nim.'", "'.$nama_mahasiswa.'", "'.$telp.'" , "'.$kelas.'")' );
+                                $simpan = mysqli_query($conn, 'INSERT INTO tbmahasiswa(nim,namaMahasiswa,telp,idKelas) VALUES ("'.$nim.'", "'.$nama_mahasiswa.'", "'.$telp.'" , "'.$kelas.'")' );
                                 echo '
                                 <script>
                                 alert("Mahasiswa berhasil ditambahkan!");

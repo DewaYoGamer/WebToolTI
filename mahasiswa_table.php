@@ -161,7 +161,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $tampil = mysqli_query($conn, "SELECT tbMahasiswa.*, tbKelas.namaKelas FROM tbMahasiswa JOIN tbKelas ON tbMahasiswa.idKelas = tbKelas.idKelas");
+                                        $tampil = mysqli_query($conn, "SELECT tbmahasiswa.*, tbkelas.namaKelas FROM tbmahasiswa JOIN tbkelas ON tbmahasiswa.idKelas = tbkelas.idKelas");
 
                                         // Check if the query was successful
                                         if (!$tampil) {
