@@ -41,12 +41,12 @@
     // Get the total number of mahasiswa
     $result = mysqli_query($conn, "SELECT COUNT(*) AS totalMahasiswa FROM tbmahasiswa");
     $data = mysqli_fetch_assoc($result);
-    $totalmahasiswa = $data['totalmahasiswa'];
+    $totalmahasiswa = $data['totalMahasiswa'];
 
     // Get the total number of kelas
     $result = mysqli_query($conn, "SELECT COUNT(*) AS totalKelas FROM tbkelas");
     $data = mysqli_fetch_assoc($result);
-    $totalkelas = $data['totalkelas'];
+    $totalkelas = $data['totalKelas'];
     ?>
 
     <!-- Page Wrapper -->
