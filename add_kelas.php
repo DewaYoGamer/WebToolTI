@@ -153,7 +153,7 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="nama_kelas">Nama Kelas<span style="color:red;">*</span></label>
-                                            <input class="form-control" name="nama_kelas" id="nama_kelas" type="text" placeholder="Masukan Nama Mahasiswa" maxLength="255" />
+                                            <input class="form-control" name="nama_kelas" id="nama_kelas" type="text" placeholder="Masukan Nama Kelas" maxLength="255" />
                                         </div>
                                     </div>
                                     <div class="form-row">
