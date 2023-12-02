@@ -4,11 +4,9 @@ RewriteEngine On
 # Redirect requests to the root directory to index.php
 RewriteRule ^$ /WebToolTI/index.php [L]
 
-# Redirect requests to dashboard.php if it's a directory request
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^(.*)$ /WebToolTI/404.html [L,QSA]
-
-# Redirect requests to dashboard.php for other cases
-RewriteCond %{REQUEST_FILENAME} !-f
+# If the requested filename is not a directory...
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /WebToolTI/404.html [L,QSA]
+# ...and the requested filename is not a file that exists...
+RewriteCond %{REQUEST_FILENAME} !-f
+# ...then rewrite the request to 404.html
+RewriteRule ^ /WebToolTI/404.html [L]
