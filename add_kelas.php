@@ -148,18 +148,18 @@
                                 <div class="card-body col-md-12">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="idkelas">ID Kelas<span style="color:red;">*</span></label>
-                                            <input class="form-control" name="idkelas" id="idkelas" type="text" placeholder="Masukan ID Kelas" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxLength="5" />
+                                            <label for="idKelas">ID Kelas<span style="color:red;">*</span></label>
+                                            <input class="form-control" name="idKelas" id="idKelas" type="text" placeholder="Masukan ID Kelas" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxLength="5" />
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="nama_kelas">Nama Kelas<span style="color:red;">*</span></label>
-                                            <input class="form-control" name="nama_kelas" id="nama_kelas" type="text" placeholder="Masukan Nama Mahasiswa" maxLength="35" />
+                                            <input class="form-control" name="nama_kelas" id="nama_kelas" type="text" placeholder="Masukan Nama Mahasiswa" maxLength="255" />
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="nama_dosen">Nama Dosen<span style="color:red;">*</span></label>
-                                            <input class="form-control" name="nama_dosen" id="nama_dosen" type="text" placeholder="Masukan Nama Dosen" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxLength="13" />
+                                            <input class="form-control" name="nama_dosen" id="nama_dosen" type="text" placeholder="Masukan Nama Dosen" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxLength="255" />
                                         </div>
                                     </div>
                                 </div>
@@ -172,18 +172,18 @@
                     </div>
                         <?php
                         if(isset($_POST['simpan'])){
-                        $idkelas = $_POST['idkelas'];
+                        $idKelas = $_POST['idKelas'];
                         $nama_kelas = $_POST['nama_kelas'];
                         $nama_dosen = $_POST['nama_dosen'];
 
                         
-                        if ($idkelas == '' || $nama_kelas == '' || $nama_dosen == '' || strlen($nama_kelas) < 3 || strlen($nama_dosen) < 3 || strlen($idkelas) != 5) {
+                        if ($idKelas == '' || $nama_kelas == '' || $nama_dosen == '' || strlen($nama_kelas) < 3 || strlen($nama_dosen) < 3 || strlen($idKelas) != 5) {
                             echo "<script>alert('Masukan tidak valid, silahkan coba kembali');</script>";
                         } else {
                             // Check if idKelas already exists
                             $check = mysqli_query($conn, "SELECT * FROM tbkelas WHERE idKelas='$idKelas'");
                             if (mysqli_num_rows($check) > 0) {
-                                echo "<script>alert('idkelas sudah ada, silahkan coba lagi');</script>";
+                                echo "<script>alert('ID sudah ada, silahkan coba lagi');</script>";
                             } else {
                                 $simpan = mysqli_query($conn, 'INSERT INTO tbkelas(idKelas,namaKelas,namaDosen) VALUES ("'.$idKelas.'", "'.$nama_kelas.'", "'.$nama_dosen.'")' );
                                 echo '

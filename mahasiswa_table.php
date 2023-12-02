@@ -171,9 +171,9 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $data['nim']; ?></td>
-                                            <td><?php echo $data['namamahasiswa']; ?></td>
+                                            <td><?php echo $data['namaMahasiswa']; ?></td>
                                             <td><?php echo $data['telp']; ?></td>
-                                            <td><?php echo $data['namakelas']; ?></td>
+                                            <td><?php echo $data['namaKelas']; ?></td>
                                             <td>
                                                 <a href="php/delete_mahasiswa.php?id=<?php echo $data['nim']; ?>" class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus?');">Delete</a>
                                             </td>

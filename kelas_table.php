@@ -161,7 +161,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $tampil = mysqli_query($conn,"SELECT * FROM tbkelas");
+                                        $tampil = mysqli_query($conn,"SELECT tbkelas.*, COUNT(tbmahasiswa.nim) as jumlahMahasiswa FROM tbkelas LEFT JOIN tbmahasiswa ON tbkelas.idKelas = tbmahasiswa.idKelas GROUP BY tbkelas.idKelas");
 
                                         // Check if the query was successful
                                         if (!$tampil) {

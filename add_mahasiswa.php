@@ -153,7 +153,7 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="nama_mahasiswa">Nama Mahasiswa<span style="color:red;">*</span></label>
-                                            <input class="form-control" name="nama_mahasiswa" id="nama_mahasiswa" type="text" placeholder="Masukan Nama Mahasiswa" maxLength="35" />
+                                            <input class="form-control" name="nama_mahasiswa" id="nama_mahasiswa" type="text" placeholder="Masukan Nama Mahasiswa" maxLength="255" />
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -192,7 +192,7 @@
                         $kelas = $_POST['kelas'];
 
                         
-                        if ($nim == '' || $nama_mahasiswa == '' || $telp == '' || strlen($telp) < 8 || strlen($nama_mahasiswa) < 3 || strlen($nim) != 10 || $kelas != '-- Tambah Kelas --') {
+                        if ($nim == '' || $nama_mahasiswa == '' || $telp == '' || strlen($telp) < 8 || strlen($nama_mahasiswa) < 3 || strlen($nim) != 10 || empty($kelas)) {
                             echo "<script>alert('Masukan tidak valid, silahkan coba kembali');</script>";
                         } else {
                             // Check if nim already exists
