@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Data Mahasiswa TI - Table Kelas</title>
+    <title>Admin Data Mahasiswa TI - Tabel Kelas</title>
 
     <link rel="icon" type="image/x-icon" href="img/hmti-colored.ico">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
