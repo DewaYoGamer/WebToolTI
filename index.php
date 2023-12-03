@@ -12,13 +12,11 @@
     <title>Admin Data Mahasiswa TI - Dashboard</title>
 
     <link rel="icon" type="image/x-icon" href="img/hmti-colored.ico">
-    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -28,22 +26,17 @@
     <?php
     include 'php/connect.php';
 
-    // Start the session
     session_start();
 
-    // Check if the user is logged in
     if (!isset($_SESSION['username'])) {
-    // Redirect the user to the login page
     header("Location: login.php");
     exit;
     }
 
-    // Get the total number of mahasiswa
     $result = mysqli_query($conn, "SELECT COUNT(*) AS totalMahasiswa FROM tbmahasiswa");
     $data = mysqli_fetch_assoc($result);
     $totalmahasiswa = $data['totalMahasiswa'];
 
-    // Get the total number of kelas
     $result = mysqli_query($conn, "SELECT COUNT(*) AS totalKelas FROM tbkelas");
     $data = mysqli_fetch_assoc($result);
     $totalkelas = $data['totalKelas'];

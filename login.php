@@ -12,42 +12,31 @@
     <title>Admin Data Mahasiswa TI - Login</title>
 
     <link rel="icon" type="image/x-icon" href="img/hmti-colored.ico">
-    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
 <?php
-// Start the session
 session_start();
 
-// Include your database connection file
 include 'php/connect.php';
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and validate the input data
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    // Query the database
     $result = mysqli_query($conn, "SELECT * FROM admin WHERE username='$username' AND pass='$password'");
 
-    // Check if the user exists
     if (mysqli_num_rows($result) == 1) {
-        // Store the user data in the session
         $_SESSION['username'] = $username;
 
-        // Redirect the user to the admin page
         header("Location: index.php");
     } else {
-        // Show an error message
         echo "<script>alert('Username atau Password Salah!'); window.location.href='login.php';</script>";
     }
 }

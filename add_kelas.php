@@ -12,13 +12,11 @@
     <title>Admin Data Mahasiswa TI - Tambah Mahasiswa</title>
 
     <link rel="icon" type="image/x-icon" href="img/hmti-colored.ico">
-    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -180,7 +178,6 @@
                         if ($idKelas == '' || $nama_kelas == '' || $nama_dosen == '' || strlen($nama_kelas) < 3 || strlen($nama_dosen) < 3 || strlen($idKelas) != 5) {
                             echo "<script>alert('Masukan tidak valid, silahkan coba kembali');</script>";
                         } else {
-                            // Check if idKelas already exists
                             $check = mysqli_query($conn, "SELECT * FROM tbkelas WHERE idKelas='$idKelas'");
                             if (mysqli_num_rows($check) > 0) {
                                 echo "<script>alert('ID sudah ada, silahkan coba lagi');</script>";
